@@ -5,11 +5,11 @@
 # Visit SlackPack at http://sotirov-bg.net/slackpack/
 #
 
-. /etc/slack-package.conf
+. ../slack-package.conf
 
 NAME=jack
 FULLNAME=jack-audio-connection-kit
-VERSION=0.109.2
+VERSION=0.116.2
 BUILD=1
 ARCH=${ARCH:-i486}
 
@@ -73,9 +73,9 @@ install -m 644 $CWD/$NAME.SlackBuild   $SBDIR/$NAME.SlackBuild
 
 PKGNAME=$NAME-$VERSION-$ARCH-$BUILD$MYIN
 cd $PKG
-makepkg -l y -c n $PKG_DIR/$PKGNAME.tgz
+makepkg -l y -c n $PKG_DIR/$PKGNAME.txz
 cd $PKG_DIR
-md5sum $PKGNAME.tgz > $PKGNAME.tgz.md5
+md5sum $PKGNAME.txz > $PKGNAME.txz.md5
 cp $CWD/slack-desc $PKGNAME.txt
 
 # Clean up (optionally)
