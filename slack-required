@@ -1,12 +1,12 @@
-alsa-lib >= 1.0.15
-cxxlibs >= 6.0.9 | gcc-g++ >= 4.2.3
-gcc >= 4.2.3
-glibc-solibs >= 2.7
+alsa-lib >= 1.0.18
+cxxlibs >= 6.0.10 | gcc-g++ >= 4.3.3
+gcc >= 4.3.3
+glibc-solibs >= 2.9
 libavc1394 >= 0.5.3
 libfreebob >= 1.0.11
 libiec61883 >= 1.1.0
-libraw1394 >= 2.0.0
+libraw1394 >= 2.0.2
 libtermcap >= 1.2.3
-libxml2 >= 2.6.31
+libxml2 >= 2.7.3
 readline >= 5.2
 zlib >= 1.2.3
