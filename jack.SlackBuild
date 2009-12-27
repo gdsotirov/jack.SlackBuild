@@ -9,7 +9,7 @@
 
 NAME=jack
 FULLNAME=jack-audio-connection-kit
-VERSION=0.116.2
+VERSION=0.118.0
 BUILD=1
 ARCH=${ARCH:-i486}
 
