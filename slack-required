@@ -1,12 +1,11 @@
-alsa-lib >= 1.0.18
-cxxlibs >= 6.0.10 | gcc-g++ >= 4.3.3
-gcc >= 4.3.3
-glibc-solibs >= 2.9
-libavc1394 >= 0.5.3
-libfreebob >= 1.0.11
-libiec61883 >= 1.1.0
-libraw1394 >= 2.0.2
-libtermcap >= 1.2.3
-libxml2 >= 2.7.3
+alsa-lib >= 1.0.23
+celt >= 0.7.1
+cxxlibs >= 6.0.13 | gcc-g++ >= 4.4.4
+dbus >= 1.2.24
+expat >= 2.0.1
+gcc >= 4.4.4
+glibc-solibs >= 2.11.1
+libsamplerate >= 0.1.7
+libsndfile >= 1.0.21
+ncurses >= 5.7
 readline >= 5.2
-zlib >= 1.2.3
