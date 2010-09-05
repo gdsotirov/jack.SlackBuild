@@ -58,6 +58,7 @@ LINKFLAGS=-lncurses \
 bin_perms $PKG
 ( cd $PKG; strip_bin; strip_lib )
 ( cd $SRC; create_docs $PKG $NAME-$VERSION )
+install -m 644 $CWD/JACKLIC $PKG/usr/doc/$NAME-$VERSION/COPYING
 gzip_man $PKG
 
 # Copy service info
@@ -69,6 +70,7 @@ SBDIR=$PKG/usr/src/slackbuilds/$NAME-$VERSION
 install -m 755 -d $SBDIR
 install -m 644 $CWD/slack-desc         $SBDIR/slack-desc
 install -m 644 $CWD/slack-required     $SBDIR/slack-required
+install -m 644 $CWD/JACKLIC            $SBDIR/JACKLIC
 install -m 644 $CWD/$NAME.SlackBuild   $SBDIR/$NAME.SlackBuild
 
 # Package
