@@ -19,13 +19,13 @@
 #
 # Visit SlackPack at http://sotirov-bg.net/slackpack/
 #
-# $Id: jack.SlackBuild,v 1.7 2011/02/13 13:06:24 gsotirov Exp $
+# $Id: jack.SlackBuild,v 1.8 2011/08/07 14:57:05 gsotirov Exp $
 #
 
 . ../slack-package.conf
 
 NAME=jack
-VERSION=1.9.6
+VERSION=1.9.7
 BUILD=${BUILD:-1}
 ARCH=${ARCH:-i486}
 
@@ -55,6 +55,9 @@ tar -xvf $CWD/$NAME-$VERSION.tar.bz2 || exit 1
 cd $SRC
 fix_source
 
+# Apply patches
+patch -p1 < $CWD/$NAME-$VERSION-freebob.diff
+
 # Configure
 # Library readline requres ncurses, but it's not dynamically linked to it
 CFLAGS=$SLKCFLAGS \
@@ -80,11 +83,6 @@ bin_perms $PKG
 ( cd $PKG; strip_bin; strip_lib )
 ( cd $SRC; create_docs $PKG $NAME-$VERSION )
 install -m 644 $CWD/JACKLIC $PKG/usr/doc/$NAME-$VERSION/COPYING
-# Fix man pages location
-( cd $PKG/usr/share/man
-  mkdir $PKG/usr/man
-  mv * $PKG/usr/man 
-  rm -rf $PKG/usr/share/man )
 gzip_man $PKG
 
 # Copy service info
@@ -94,10 +92,11 @@ install -m 644 $CWD/slack-required $PKG/install/slack-required
 
 SBDIR=$PKG/usr/src/slackbuilds/$NAME-$VERSION
 install -m 755 -d $SBDIR
-install -m 644 $CWD/slack-desc         $SBDIR/slack-desc
-install -m 644 $CWD/slack-required     $SBDIR/slack-required
-install -m 644 $CWD/JACKLIC            $SBDIR/JACKLIC
-install -m 644 $CWD/$NAME.SlackBuild   $SBDIR/$NAME.SlackBuild
+install -m 644 $CWD/slack-desc                  $SBDIR/slack-desc
+install -m 644 $CWD/slack-required              $SBDIR/slack-required
+install -m 644 $CWD/$NAME-$VERSION-freebob.diff $SBDIR/$NAME-$VERSION-freebob.diff
+install -m 644 $CWD/JACKLIC                     $SBDIR/JACKLIC
+install -m 644 $CWD/$NAME.SlackBuild            $SBDIR/$NAME.SlackBuild
 
 # Package
 PKGNAME=$NAME-$VERSION-$ARCH-$BUILD$MYIN
