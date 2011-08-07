@@ -19,7 +19,7 @@
 #
 # Visit SlackPack at http://sotirov-bg.net/slackpack/
 #
-# $Id: jack.SlackBuild,v 1.8 2011/08/07 14:57:05 gsotirov Exp $
+# $Id: jack.SlackBuild,v 1.9 2011/08/07 15:07:12 gsotirov Exp $
 #
 
 . ../slack-package.conf
@@ -65,7 +65,7 @@ CXXFLAGS=$SLKCFLAGS \
 LINKFLAGS=-lncurses \
 ./waf configure \
       --prefix=/usr \
-      --mandir=/man \
+      --mandir=/man/man1 \
       --classic \
       --dbus \
       --firewire \
