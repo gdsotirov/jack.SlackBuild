@@ -19,10 +19,10 @@
 #
 # Visit SlackPack at http://sotirov-bg.net/slackpack/
 #
-# $Id: jack.SlackBuild,v 1.9 2011/08/07 15:07:12 gsotirov Exp $
+# $Id: jack.SlackBuild,v 1.10 2011/09/10 19:45:26 gsotirov Exp $
 #
 
-. ../slack-package.conf
+. ../../slack-package.conf
 
 NAME=jack
 VERSION=1.9.7
