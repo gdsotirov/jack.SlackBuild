@@ -1,12 +1,12 @@
-alsa-lib >= 1.0.24
-celt >= 0.11.1
+alsa-lib >= 1.0.24.1
+celt >= 0.11.2
 cxxlibs >= 6.0.14 | gcc-g++ >= 4.5.2
 dbus >= 1.4.1
 expat >= 2.0.1
 gcc >= 4.5.2
 glibc-solibs >= 2.13
-libsamplerate >= 0.1.7
-libsndfile >= 1.0.24
+libsamplerate >= 0.1.8
+libsndfile >= 1.0.25
 ncurses >= 5.9
 python >= 2.6
 readline >= 5.2
