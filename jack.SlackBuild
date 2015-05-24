@@ -19,13 +19,13 @@
 #
 # Visit SlackPack at http://sotirov-bg.net/slackpack/
 #
-# $Id: jack.SlackBuild,v 1.13 2015/05/20 18:34:55 gsotirov Exp $
+# $Id: jack.SlackBuild,v 1.14 2015/05/24 10:53:38 gsotirov Exp $
 #
 
 . ../../slack-package.conf
 
 NAME=jack
-VERSION=1.9.9.5
+VERSION=1.9.10
 BUILD=${BUILD:-1}
 ARCH=${ARCH:-i486}
 
@@ -36,7 +36,7 @@ if [ ! -e $TMP ]; then
   mkdir -p $TMP # location to build the source
 fi
 
-SRC=$TMP/${NAME}2-$VERSION
+SRC=$TMP/${NAME}-$VERSION
 if [ -e $SRC -a -d $SRC ]; then
   echo "Source directory '$SRC' already exists! Plaese, move it or remove it."
   exit 1
@@ -67,7 +67,6 @@ LINKFLAGS=-lncurses \
       --classic \
       --dbus \
       --firewire \
-      --freebob \
       --alsa || exit 5
 
 # Build & install
