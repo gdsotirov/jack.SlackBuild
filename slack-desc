@@ -11,4 +11,4 @@ jack: and its design focuses on two key areas: synchronous execution of all
 jack: clients, and low latency operation.
 jack: NOTE: This package provides both classic JACK and D-Bus JACK.
 jack:
-jack: Packaged by Georgi D. Sotirov <gdsotirov@dir.bg>
+jack: Packaged by Georgi D. Sotirov <gdsotirov@gmail.com>
