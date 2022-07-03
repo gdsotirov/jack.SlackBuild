@@ -23,9 +23,9 @@
 . ../../slack-package.conf
 
 NAME=jack
-VERSION=1.9.13
+VERSION=1.9.21
 BUILD=${BUILD:-1}
-ARCH=${ARCH:-i486}
+ARCH=${ARCH:-i586}
 
 CWD=${CWD:-`pwd`}
 TMP=${TMP:-/tmp}
@@ -59,19 +59,17 @@ CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 LINKFLAGS=-lncurses \
 ./waf configure \
-      --prefix=/usr \
-      --mandir=/usr/man/man1 \
-      --libdir=/usr/lib${LIBDIRSUFFIX} \
+      --alsa \
       --classic \
       --dbus \
       --firewire \
-      --alsa || exit 5
+      --libdir=/usr/lib${LIBDIRSUFFIX} \
+      --mandir=/usr/man/man1 \
+      --prefix=/usr || exit 5
 
 # Build & install
-./waf build --verbose --jobs 4 || exit 6
+./waf build --verbose --jobs 8 || exit 6
 ./waf install --verbose --destdir=$PKG || exit 7
-# Provide symbolic link for convenience with previous versions of jack
-( cd $PKG/usr/bin; ln --symbolic jack_rec jackrec )
 
 bin_perms $PKG
 ( cd $PKG; strip_bin; strip_lib )
